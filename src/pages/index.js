@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <header>
         <h1>
-          Hello, I am Sigmundur Mørkøre
+          Hello, I am Sigmundur Mørkøreeee
           <p>I make and design great looking websites.</p>
         </h1>
         <img alt="Image of sheep or something like that" />
