@@ -6,10 +6,10 @@ import styled, { css } from 'styled-components'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import header from '../images/header.jpg'
-import SectionWave from '../components/Section wave.svg'
 
 const Header = styled.header`
   height: 40vw;
+  margin: 0 auto;
 
   /* Background Image */
   background: linear-gradient(rgba(1, 22, 39, 0.9), rgba(1, 22, 39, 0.9)),
@@ -17,7 +17,7 @@ const Header = styled.header`
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 0 auto;
+  clip-path: inset(0 -100% 0 0 round 0% 0% 0% 35%);
 
   /* Text */
   color: white;
@@ -58,18 +58,6 @@ const IndexPage = ({ data }) => {
             I make and design great looking websites.
           </p>
         </h1>
-        <object
-          type="image/svg+xml"
-          data={SectionWave}
-          css={css`
-            position: absolute;
-            left: -10px;
-            top: 23vw;
-            width: 110vw;
-          `}
-        >
-          Wave
-        </object>
       </Header>
       <main>
         <section>
