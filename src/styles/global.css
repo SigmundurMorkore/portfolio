@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: Brawler;
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+b,
+dt {
+  font-family: 'Bree Serif';
+  line-height: inherit;
+}
+
+dt {
+  line-height: 24px;
+}
+
+dd {
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 130%;
+}
