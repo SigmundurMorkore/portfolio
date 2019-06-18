@@ -26,7 +26,7 @@ const IndexPage = ({ data }) => {
   console.log(data)
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Sigmundur Mørkøre's Portfolio" />
       <Header>
         <h1
           css={`
