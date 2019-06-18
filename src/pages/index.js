@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components'
 import Image from '../components/image'
 import SEO from '../components/seo'
 import header from '../images/header.jpg'
+import SectionWave from '../components/Section wave.svg'
 
 const Header = styled.header`
   height: 40vw;
@@ -57,6 +58,18 @@ const IndexPage = ({ data }) => {
             I make and design great looking websites.
           </p>
         </h1>
+        <object
+          type="image/svg+xml"
+          data={SectionWave}
+          css={css`
+            position: absolute;
+            left: -10px;
+            top: 23vw;
+            width: 110vw;
+          `}
+        >
+          Wave
+        </object>
       </Header>
       <main>
         <section>
