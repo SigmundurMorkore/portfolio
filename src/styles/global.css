@@ -8,6 +8,7 @@ h3,
 h4,
 h5 {
   font-family: Brawler;
+  font-weight: lighter;
 }
 
 h1 {
@@ -33,4 +34,15 @@ h5 {
 b,
 dt {
   font-family: 'Bree Serif';
+  line-height: inherit;
+}
+
+dt {
+  line-height: 24px;
+}
+
+dd {
+  margin-left: 20px;
+  font-size: 18px;
+  line-height: 130%;
 }

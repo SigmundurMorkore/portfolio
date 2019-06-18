@@ -1,9 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled, { css } from 'styled-components'
 
-import Image from '../components/image'
 import SEO from '../components/seo'
 import header from '../images/header.jpg'
 
@@ -49,6 +47,7 @@ const IndexPage = ({ data }) => {
           </b>
           <p
             css={`
+              margin: 0;
               padding-top: 10px;
               margin-right: -50px;
               font-size: 36px;
@@ -59,10 +58,33 @@ const IndexPage = ({ data }) => {
           </p>
         </h1>
       </Header>
-      <main>
-        <section>
-          <h2>About me</h2>
-          <h3>
+      <main
+        css={css`
+          margin: 50px 5vw;
+        `}
+      >
+        <section
+          css={css`
+            display: grid;
+            grid-column-gap: 50px;
+            grid-template:
+              '. about about aside'
+              '. content content aside';
+            margin: 0 10vw;
+          `}
+        >
+          <h2
+            css={css`
+              grid-area: about;
+            `}
+          >
+            About me
+          </h2>
+          <h3
+            css={css`
+              grid-area: content;
+            `}
+          >
             Hi, my name is <b>Sigmundur Mørkøre</b>. I’m born in a country with
             18 sheep filled islands, called the <b>Faroe Islands</b>. I went to
             Higher Technical Examination (HTX) school, where I gained a passion
@@ -71,16 +93,41 @@ const IndexPage = ({ data }) => {
             went to, and am in, <b>Edge Hill University</b> studying a bachelor
             in <b>Web Design & Development.</b>
           </h3>
-          <aside>
+          <aside
+            css={css`
+              grid-area: aside;
+              width: 250px;
+              height: 300px;
+              box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+              margin: 0 auto;
+              margin-top: 50px;
+            `}
+          >
             <Img
               alt="Profile picture"
               fixed={data.profileImg.childImageSharp.fixed}
-              style={{ 'border-radius': '50%' }}
+              style={{ 'border-radius': '50%', display: 'block' }}
+              css={css`
+                margin-top: -50px;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+              `}
             />
-            <h3>
+            <h3
+              css={css`
+                text-align: center;
+                margin-bottom: 0;
+                margin-top: 10px;
+              `}
+            >
               <b>Contact me</b>
             </h3>
-            <dl>
+            <dl
+              css={css`
+                margin: 0 22px;
+              `}
+            >
               <dt>Email</dt>
               <dd>sm@sigmundur.dev</dd>
               <dt>Twitter</dt>
@@ -177,7 +224,7 @@ export const pageQuery = graphql`
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
         fixed(width: 105, height: 105) {
-          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+          ...GatsbyImageSharpFixed_withWebp
         }
       }
     }
