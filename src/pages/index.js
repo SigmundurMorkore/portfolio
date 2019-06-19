@@ -27,6 +27,7 @@ const SectionTitle = styled.h2`
   margin-top: 30px;
   position: relative;
   z-index: 1;
+  overflow: hidden
 
   &:before {
     content: '';
@@ -36,10 +37,6 @@ const SectionTitle = styled.h2`
     position: absolute;
     /* positioning must be absolute here, and relative positioning must be applied to the parent */
     top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 95%;
     z-index: -1;
     /* this is just to undo the :before styling from above */
     border-top: none;
@@ -52,10 +49,9 @@ const SectionTitle = styled.h2`
     margin: 0 auto;
     /* this centers the line to the full width specified */
     position: absolute;
-    top: 45%;
-    left: 0;
-    right: 0;
-    width: 95%;
+    top: 50%;
+    left: 0vw;
+    width: 100%;
     z-index: -1;
   }
 
@@ -63,6 +59,45 @@ const SectionTitle = styled.h2`
     /* to hide the lines from behind the text, you have to set the background color the same as the container */
     background: #fff;
     padding: 0 15px;
+  }
+`
+
+const Project = styled.div`
+  display: grid;
+  grid-template:
+    'title'
+    'image'
+    'content'
+    'socials';
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  justify-items: center;
+
+  h3 {
+    grid-area: title;
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 1px solid #011627;
+    width: 240px;
+  }
+
+  .gatsby-image-wrapper {
+    grid-area: image;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  h4 {
+    grid-area: content;
+  }
+
+  ul {
+    display: grid;
+    grid-area: socials;
+    grid-template: 'github blog';
+    grid-gap: 50px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 `
 
@@ -120,7 +155,7 @@ const IndexPage = ({ data }) => {
           <h2
             css={css`
               grid-area: about;
-              margin-bottom: 0;
+              margin-bottom: 10px;
               display: flex;
               align-items: flex-end;
             `}
@@ -130,6 +165,7 @@ const IndexPage = ({ data }) => {
           <h3
             css={css`
               grid-area: content;
+              margin-top: 10px;
             `}
           >
             Hi, my name is <b>Sigmundur Mørkøre</b>. I’m born in a country with
@@ -190,50 +226,59 @@ const IndexPage = ({ data }) => {
           <SectionTitle>
             <span>Featured Projects</span>
           </SectionTitle>
-          <div>
-            <h3>Ferdaaetlan.fo</h3>
-            <Img
-              alt="Screenshot of the ferdaaetlan.fo page"
-              fixed={data.ferdaaetlanImg.childImageSharp.fixed}
-            />
-            <h4>
-              I developed <b>Ferðaætlan</b> while studying in{' '}
-              <b>Tekniski Skúlanum í Klaksvík.</b> It allows the user to see
-              which SSL bus routes they need to take, to get to their
-              destination. The website is developed using{' '}
-              <b>React and Firebase.</b>
-            </h4>
-            <ul>
-              <li>
-                <h5>View on GitHub</h5> <img alt="GitHub Logo" />
-              </li>
-              <li>
-                <h5>Read more</h5> <img alt="Blog logo" />
-              </li>
-            </ul>
+          <div
+            css={css`
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
+              grid-gap: 50px;
+              justify-content: center;
+            `}
+          >
+            <Project>
+              <h3>Ferdaaetlan.fo</h3>
+              <Img
+                alt="Screenshot of the ferdaaetlan.fo page"
+                fixed={data.ferdaaetlanImg.childImageSharp.fixed}
+              />
+              <h4>
+                I developed <b>Ferðaætlan</b> while studying in{' '}
+                <b>Tekniski Skúlanum í Klaksvík.</b> It allows the user to see
+                which SSL bus routes they need to take, to get to their
+                destination. The website is developed using{' '}
+                <b>React and Firebase.</b>
+              </h4>
+              <ul>
+                <li>
+                  <h5>View on GitHub</h5> <img alt="GitHub Logo" />
+                </li>
+                <li>
+                  <h5>Read more</h5> <img alt="Blog logo" />
+                </li>
+              </ul>
+            </Project>
+            <Project>
+              <h3>Hvar.fo</h3>
+              <Img
+                alt="Screenshot of the hvar.fo page"
+                fixed={data.hvarImg.childImageSharp.fixed}
+                objectFit="cover"
+              />
+              <h4>
+                <b>Hvar.fo</b> is a list over all “.fo” domains. All the
+                websites are categorized into categories, and the search field
+                allows the user to search for anything they want. The website is
+                developed using <b>React, Airtable, and Netlify (Functions).</b>
+              </h4>
+              <ul>
+                <li>
+                  <h5>View on GitHub</h5> <img alt="GitHub Logo" />
+                </li>
+                <li>
+                  <h5>Read more</h5> <img alt="Blog logo" />
+                </li>
+              </ul>
+            </Project>
           </div>
-          <div>
-            <h3>Hvar.fo</h3>
-            <Img
-              alt="Screenshot of the hvar.fo page"
-              fixed={data.hvarImg.childImageSharp.fixed}
-              objectFit="cover"
-            />
-            <h4>
-              <b>Hvar.fo</b> is a list over all “.fo” domains. All the websites
-              are categorized into categories, and the search field allows the
-              user to search for anything they want. The website is developed
-              using <b>React, Airtable, and Netlify (Functions).</b>
-            </h4>
-          </div>
-          <ul>
-            <li>
-              <h5>View on GitHub</h5> <img alt="GitHub Logo" />
-            </li>
-            <li>
-              <h5>Read more</h5> <img alt="Blog logo" />
-            </li>
-          </ul>
         </section>
         <section>
           <SectionTitle>
