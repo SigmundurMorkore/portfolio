@@ -24,7 +24,8 @@ const Header = styled.header`
 
 const SectionTitle = styled.h2`
   text-align: center;
-  margin-top: 30px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   position: relative;
   z-index: 1;
   overflow: hidden
@@ -79,6 +80,11 @@ const Project = styled.div`
     margin-top: 0;
     border-bottom: 1px solid #011627;
     width: 240px;
+    height: 30px;
+
+    a {
+      text-decoration: none;
+    }
   }
 
   .gatsby-image-wrapper {
@@ -93,11 +99,26 @@ const Project = styled.div`
   ul {
     display: grid;
     grid-area: socials;
-    grid-template: 'github blog';
-    grid-gap: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(0px, 1fr));
+    grid-gap: 0px;
+    justify-content: center;
+    width: 75%;
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    h5 {
+      display: inline;
+      padding-right: 5px;
+    }
+
+    li {
+      justify-self: center;
+
+      i {
+        vertical-align: middle;
+      }
+    }
   }
 `
 
@@ -172,9 +193,10 @@ const IndexPage = ({ data }) => {
             18 sheep filled islands, called the <b>Faroe Islands</b>. I went to
             Higher Technical Examination (HTX) school, where I gained a passion
             for <b>web development</b>. I made many websites while in HTX, and
-            in the last year, I developed www.ferdaaetlan.fo. After graduating I
-            went to, and am in, <b>Edge Hill University</b> studying a bachelor
-            in <b>Web Design & Development.</b>
+            in the last year, I developed{' '}
+            <a href="https://ferdaaetlan.fo">www.ferdaaetlan.fo</a>. After
+            graduating I went to, and am in, <b>Edge Hill University</b>{' '}
+            studying a bachelor in <b>Web Design & Development.</b>
           </h3>
           <aside
             css={css`
@@ -235,46 +257,68 @@ const IndexPage = ({ data }) => {
             `}
           >
             <Project>
-              <h3>Ferdaaetlan.fo</h3>
-              <Img
-                alt="Screenshot of the ferdaaetlan.fo page"
-                fixed={data.ferdaaetlanImg.childImageSharp.fixed}
-              />
+              <h3>
+                <a href="https://ferdaaetlan.fo">Ferdaaetlan.fo</a>
+              </h3>
+              <a href="https://ferdaaetlan.fo">
+                <Img
+                  alt="Screenshot of the ferdaaetlan.fo page"
+                  fixed={data.ferdaaetlanImg.childImageSharp.fixed}
+                />
+              </a>
               <h4>
-                I developed <b>Ferðaætlan</b> while studying in{' '}
-                <b>Tekniski Skúlanum í Klaksvík.</b> It allows the user to see
-                which SSL bus routes they need to take, to get to their
-                destination. The website is developed using{' '}
+                I developed{' '}
+                <b>
+                  <a href="https://ferdaaetlan.fo">Ferðaætlan</a>
+                </b>{' '}
+                while studying in <b>Tekniski Skúlanum í Klaksvík.</b> It allows
+                the user to see which SSL bus routes they need to take, to get
+                to their destination. The website is developed using{' '}
                 <b>React and Firebase.</b>
               </h4>
-              <ul>
+              <ul
+                css={css`
+                  min-height: 20.75px;
+                `}
+              >
                 <li>
-                  <h5>View on GitHub</h5> <img alt="GitHub Logo" />
+                  <h5>View on GitHub</h5>
+                  <i class="fab fa-github" />
                 </li>
                 <li>
-                  <h5>Read more</h5> <img alt="Blog logo" />
+                  <h5>Read more</h5>
+                  <i class="fal fa-newspaper" />
                 </li>
               </ul>
             </Project>
             <Project>
-              <h3>Hvar.fo</h3>
-              <Img
-                alt="Screenshot of the hvar.fo page"
-                fixed={data.hvarImg.childImageSharp.fixed}
-                objectFit="cover"
-              />
+              <h3>
+                <a href="https://hvar.fo">Hvar.fo</a>
+              </h3>
+              <a href="https://hvar.fo">
+                <Img
+                  alt="Screenshot of the hvar.fo page"
+                  fixed={data.hvarImg.childImageSharp.fixed}
+                  objectFit="cover"
+                />
+              </a>
               <h4>
-                <b>Hvar.fo</b> is a list over all “.fo” domains. All the
-                websites are categorized into categories, and the search field
-                allows the user to search for anything they want. The website is
-                developed using <b>React, Airtable, and Netlify (Functions).</b>
+                <b>
+                  <a href="https://hvar.fo">Hvar.fo</a>
+                </b>{' '}
+                is a list over all “.fo” domains. All the websites are
+                categorized into categories, and the search field allows the
+                user to search for anything they want. The website is developed
+                using <b>React, Airtable, and Netlify (Functions).</b>
               </h4>
-              <ul>
+              <ul
+                css={css`
+                  min-height: 20.75px;
+                `}
+              >
                 <li>
-                  <h5>View on GitHub</h5> <img alt="GitHub Logo" />
-                </li>
-                <li>
-                  <h5>Read more</h5> <img alt="Blog logo" />
+                  <h5>Read more</h5>
+                  <i class="fal fa-newspaper" />
                 </li>
               </ul>
             </Project>
@@ -303,6 +347,30 @@ const IndexPage = ({ data }) => {
     </>
   )
 }
+
+/*
+      <footer
+        css={css`
+          background-color: #011627;
+          color: white;
+          height: 100%;
+          text-align: right;
+          padding: 1px 50px;
+        `}
+      >
+        <h5>
+          Header photo credit:{' '}
+          <a
+            href="https://www.jacksonweaver.ca/"
+            css={css`
+              color: white;
+            `}
+          >
+            <b>Jackson Weaver</b>
+          </a>
+        </h5>
+      </footer>
+*/
 
 export const pageQuery = graphql`
   query {

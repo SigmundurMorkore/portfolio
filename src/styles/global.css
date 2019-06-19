@@ -47,6 +47,7 @@ b,
 dt {
   font-family: 'Bree Serif';
   line-height: inherit;
+  font-weight: normal;
 }
 
 dt {
@@ -62,4 +63,8 @@ dd {
 
 section {
   margin: 50px 0;
+}
+
+a {
+  color: inherit;
 }
