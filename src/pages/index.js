@@ -22,6 +22,50 @@ const Header = styled.header`
   text-align: center;
 `
 
+const SectionTitle = styled.h2`
+  text-align: center;
+  margin-top: 30px;
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    border-top: 2px solid #dfdfdf;
+    margin: 0 auto;
+    /* this centers the line to the full width specified */
+    position: absolute;
+    /* positioning must be absolute here, and relative positioning must be applied to the parent */
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 95%;
+    z-index: -1;
+    /* this is just to undo the :before styling from above */
+    border-top: none;
+  }
+
+  &:after {
+    content: '';
+    border-bottom: 1px solid #011627;
+    box-shadow: 0 1px 0 0 #011627;
+    margin: 0 auto;
+    /* this centers the line to the full width specified */
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    width: 95%;
+    z-index: -1;
+  }
+
+  span {
+    /* to hide the lines from behind the text, you have to set the background color the same as the container */
+    background: #fff;
+    padding: 0 15px;
+  }
+`
+
 const IndexPage = ({ data }) => {
   console.log(data)
   return (
@@ -76,6 +120,9 @@ const IndexPage = ({ data }) => {
           <h2
             css={css`
               grid-area: about;
+              margin-bottom: 0;
+              display: flex;
+              align-items: flex-end;
             `}
           >
             About me
@@ -140,7 +187,9 @@ const IndexPage = ({ data }) => {
           </aside>
         </section>
         <section>
-          <h2>Featured Projects</h2>
+          <SectionTitle>
+            <span>Featured Projects</span>
+          </SectionTitle>
           <div>
             <h3>Ferdaaetlan.fo</h3>
             <Img
@@ -187,7 +236,9 @@ const IndexPage = ({ data }) => {
           </ul>
         </section>
         <section>
-          <h2>Contact Me</h2>
+          <SectionTitle>
+            <span>Contact Me</span>
+          </SectionTitle>
           <dl>
             <div>
               <dt>Email</dt>

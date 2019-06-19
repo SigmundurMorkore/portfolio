@@ -45,4 +45,17 @@ dd {
   margin-left: 20px;
   font-size: 18px;
   line-height: 130%;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+::selection {
+  /* WebKit/Blink Browsers */
+  background: #011627;
+  color: white;
+}
+
+::-moz-selection {
+  /* Gecko Browsers */
+  background: #011627;
+  color: white;
 }
