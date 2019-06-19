@@ -72,6 +72,11 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
+      script={[
+        {
+          src: 'https://kit.fontawesome.com/f4f5a067b4.js',
+        },
+      ]}
     />
   )
 }

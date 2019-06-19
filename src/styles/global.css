@@ -2,6 +2,18 @@ body {
   margin: 0;
 }
 
+::selection {
+  /* WebKit/Blink Browsers */
+  background: #011627;
+  color: white;
+}
+
+::-moz-selection {
+  /* Gecko Browsers */
+  background: #011627;
+  color: white;
+}
+
 h1,
 h2,
 h3,
@@ -35,6 +47,7 @@ b,
 dt {
   font-family: 'Bree Serif';
   line-height: inherit;
+  font-weight: normal;
 }
 
 dt {
@@ -45,4 +58,13 @@ dd {
   margin-left: 20px;
   font-size: 18px;
   line-height: 130%;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+}
+
+section {
+  margin: 50px 0;
+}
+
+a {
+  color: inherit;
 }
