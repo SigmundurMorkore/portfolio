@@ -74,6 +74,13 @@ const Project = styled.div`
   padding: 20px;
   justify-items: center;
 
+  transition: 0.3s ease-in-out;
+
+  :hover {
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+  }
+
   h3 {
     grid-area: title;
     text-align: center;
@@ -119,6 +126,32 @@ const Project = styled.div`
         vertical-align: middle;
       }
     }
+  }
+`
+
+const ContactBox = styled.a`
+  text-decoration: none;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  justify-items: center;
+  transition: 0.3s ease-in-out;
+
+  :hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+  }
+
+  dt {
+    text-align: center;
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  dd {
+    text-align: center;
+    font-size: 24px;
+    line-height: 130%;
+    margin: 0; /* Remove default dd margin */
   }
 `
 
@@ -206,6 +239,13 @@ const IndexPage = ({ data }) => {
               box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
               margin: 0 auto;
               margin-top: 50px;
+
+              transition: 0.3s ease-in-out;
+
+              :hover {
+                transform: scale(1.02);
+                transition: 0.3s ease-in-out;
+              }
             `}
           >
             <Img
@@ -328,19 +368,26 @@ const IndexPage = ({ data }) => {
           <SectionTitle>
             <span>Contact Me</span>
           </SectionTitle>
-          <dl>
-            <div>
+          <dl
+            css={css`
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(270px, 375px));
+              grid-gap: 50px;
+              justify-content: center;
+            `}
+          >
+            <ContactBox href="#">
               <dt>Email</dt>
               <dd>sm@sigmundur.dev</dd>
-            </div>
-            <div>
+            </ContactBox>
+            <ContactBox href="#">
               <dt>Twitter</dt>
               <dd>@SigmundurM</dd>
-            </div>
-            <div>
+            </ContactBox>
+            <ContactBox href="#">
               <dt>GitHub</dt>
               <dd>@SigmundurMorkore</dd>
-            </div>
+            </ContactBox>
           </dl>
         </section>
       </main>
