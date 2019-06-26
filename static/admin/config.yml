@@ -10,6 +10,7 @@ collections:
   - name: 'projects'
     label: 'Project'
     folder: '_projects'
+    identifier_field: label
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Content', name: 'content', widget: 'markdown' }
