@@ -1,5 +1,18 @@
 body {
   margin: 0;
+  color: #011627;
+}
+
+::selection {
+  /* WebKit/Blink Browsers */
+  background: #011627;
+  color: white;
+}
+
+::-moz-selection {
+  /* Gecko Browsers */
+  background: #011627;
+  color: white;
 }
 
 ::selection {

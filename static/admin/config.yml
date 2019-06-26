@@ -1,0 +1,23 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+media_folder: 'static/images/uploads'
+public_folder: '/images/uploads'
+
+collections:
+  - name: 'projects'
+    label: 'Project'
+    folder: '_projects'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Content', name: 'content', widget: 'markdown' }
+      - { label: 'Link', name: 'link', widget: 'string' }
+      - { label: 'Image', name: 'image', widget: 'image' }
+      - label: 'Socials'
+        name: 'socials'
+        widget: 'list'
+        fields:
+          - { label: 'Label', name: 'label', widget: 'string' }
+          - { label: 'Font Awesome Icon', name: 'icon', widget: 'string' }
