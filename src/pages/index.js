@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 import SEO from '../components/seo'
 import Project from '../components/project'
-import header from '../images/header.jpg'
+import header from '../../static/images/header.jpg'
 
 const Header = styled.header`
   height: 40vw;
@@ -21,6 +21,7 @@ const Header = styled.header`
   /* Text */
   color: white;
   text-align: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `
 
 const SectionTitle = styled.h2`
