@@ -343,6 +343,30 @@ const IndexPage = ({ data }) => (
       </footer>
 */
 
+/*
+      <footer
+        css={css`
+          background-color: #011627;
+          color: white;
+          height: 100%;
+          text-align: right;
+          padding: 1px 50px;
+        `}
+      >
+        <h5>
+          Header photo credit:{' '}
+          <a
+            href="https://www.jacksonweaver.ca/"
+            css={css`
+              color: white;
+            `}
+          >
+            <b>Jackson Weaver</b>
+          </a>
+        </h5>
+      </footer>
+*/
+
 export const pageQuery = graphql`
   query {
     headerImg: file(relativePath: { eq: "header.jpg" }) {
