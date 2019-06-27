@@ -7,7 +7,6 @@ module.exports = {
     secondaryColor: `#FFFFFF`,
   },
   plugins: [
-    'gatsby-plugin-typescript',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -15,6 +14,17 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/static/images`,
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/_projects`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: { gfm: false },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

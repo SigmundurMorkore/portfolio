@@ -74,7 +74,7 @@ const Project = ({ title, content, link, image, socials }) => (
       <a href={link}>{title}</a>
     </h3>
     <a href={link}>{image}</a>
-    <h4>{content}</h4>
+    <h4 dangerouslySetInnerHTML={{ __html: content }} />
     <ul
       css={css`
         min-height: 20.75px;
