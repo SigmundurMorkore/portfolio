@@ -89,12 +89,14 @@ const Project = ({ title, content, link, image, socials }) => (
         min-height: 20.75px;
       `}
     >
-      {socials.map((social, i) => (
-        <li key={social.label}>
-          <h5>{social.label}</h5>
-          <i className={social.icon} />
-        </li>
-      ))}
+      {socials.length > 0
+        ? socials.map((social, i) => (
+            <li key={social.label}>
+              <h5>{social.label}</h5>
+              <i className={social.icon} />
+            </li>
+          ))
+        : null}
     </ul>
   </div>
 )
