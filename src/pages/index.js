@@ -235,7 +235,7 @@ const IndexPage = ({ data }) => (
               title={project.node.frontmatter.title}
               link={project.node.frontmatter.link}
               content={project.node.html}
-              image={project.node.image}
+              image={project.node.frontmatter.image}
               socials={project.node.frontmatter.socials}
             />
           ))}
