@@ -93,7 +93,7 @@ const ContactBox = styled.a`
 
 const IndexPage = ({ data }) => (
   <>
-    <SEO title="Sigmundur Mørkøre's Portfolio" />
+    <SEO title="Sigmundur Mørkøre's Portfolio" test={console.log(data)} />
     <Header>
       <h1
         css={`
@@ -235,7 +235,7 @@ const IndexPage = ({ data }) => (
               title={project.node.frontmatter.title}
               link={project.node.frontmatter.link}
               content={project.node.html}
-              image={project.node.image}
+              image={project.node.frontmatter.image}
               socials={project.node.frontmatter.socials}
             />
           ))}
@@ -316,7 +316,14 @@ export const pageQuery = graphql`
       edges {
         node {
           frontmatter {
-            image
+            image {
+              childImageSharp {
+                fixed(width: 290, height: 270) {
+                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                }
+              }
+            }
+            imageAlt
             link
             socials {
               icon

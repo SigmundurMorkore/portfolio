@@ -19,7 +19,7 @@ collections:
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
-      - { label: 'Image Description', name: 'ImageAlt', widget: 'string' }
+      - { label: 'Image Description', name: 'imageAlt', widget: 'string' }
       - label: 'Socials'
         name: 'socials'
         widget: 'list'
