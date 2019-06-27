@@ -75,14 +75,14 @@ const Project = ({ title, content, link, image, socials }) => (
       <a href={link}>{title}</a>
     </h3>
     <a href={link}>
-      {' '}
+      {/*
       <Img
         alt="test"
         fixed={image.childImageSharp.fixed}
         css={css`
           box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
         `}
-      />
+      />*/}
     </a>
     <h4 dangerouslySetInnerHTML={{ __html: content }} />
     <ul
