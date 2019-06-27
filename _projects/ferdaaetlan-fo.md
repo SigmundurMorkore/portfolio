@@ -1,7 +1,8 @@
 ---
 title: Ferdaaetlan.fo
 link: 'https://ferdaaetlan.fo'
-image: /images/uploads/code.png
+image: /uploads/ferdaaetlan.png
+ImageAlt: Screenshot of the Ferdaætlan website
 socials:
   - icon: fab fa-github
     label: View on GitHub
