@@ -1,6 +1,7 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
+import styled, { css } from 'styled-components'
+import Img from 'gatsby-image'
 
 const Project = ({ title, content, link, image, socials }) => (
   <div
@@ -73,8 +74,16 @@ const Project = ({ title, content, link, image, socials }) => (
     <h3>
       <a href={link}>{title}</a>
     </h3>
-    <a href={link}>{image}</a>
-    <h4>{content}</h4>
+    <a href={link}>
+      <Img
+        alt="test"
+        fixed={image.childImageSharp.fixed}
+        css={css`
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+        `}
+      />
+    </a>
+    <h4 dangerouslySetInnerHTML={{ __html: content }} />
     <ul
       css={css`
         min-height: 20.75px;

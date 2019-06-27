@@ -93,7 +93,7 @@ const ContactBox = styled.a`
 
 const IndexPage = ({ data }) => (
   <>
-    <SEO title="Sigmundur Mørkøre's Portfolio" />
+    <SEO title="Sigmundur Mørkøre's Portfolio" test={console.log(data)} />
     <Header>
       <h1
         css={`
@@ -230,63 +230,15 @@ const IndexPage = ({ data }) => (
             justify-content: center;
           `}
         >
-          <Project
-            title="Ferdaaetlan.fo"
-            link="https://ferdaaetlan.fo"
-            content={
-              <>
-                I developed{' '}
-                <b>
-                  <a href="https://ferdaaetlan.fo">Ferðaætlan</a>
-                </b>{' '}
-                while studying in <b>Tekniski Skúlanum í Klaksvík.</b> It allows
-                the user to see which SSL bus routes they need to take, to get
-                to their destination. The website is developed using{' '}
-                <b>React and Firebase.</b>
-              </>
-            }
-            image={
-              <Img
-                alt="Screenshot of the ferdaaetlan.fo page"
-                fixed={data.ferdaaetlanImg.childImageSharp.fixed}
-              />
-            }
-            socials={[
-              {
-                label: 'View on GitHub',
-                icon: 'fab fa-github',
-              },
-              {
-                label: 'Read more',
-                icon: 'fal fa-newspaper',
-              },
-            ]}
-          />
-          <Project
-            title="Hvar.fo"
-            link="https://hvar.fo"
-            content={
-              <>
-                is a list over all “.fo” domains. All the websites are
-                categorized into categories, and the search field allows the
-                user to search for anything they want. The website is developed
-                using <b>React, Airtable, and Netlify (Functions).</b>
-              </>
-            }
-            image={
-              <Img
-                alt="Screenshot of the hvar.fo page"
-                fixed={data.hvarImg.childImageSharp.fixed}
-                objectFit="cover"
-              />
-            }
-            socials={[
-              {
-                label: 'Read more',
-                icon: 'fal fa-newspaper',
-              },
-            ]}
-          />
+          {data.projects.edges.map((project, i) => (
+            <Project
+              title={project.node.frontmatter.title}
+              link={project.node.frontmatter.link}
+              content={project.node.html}
+              image={project.node.frontmatter.image}
+              socials={project.node.frontmatter.socials}
+            />
+          ))}
         </div>
       </section>
       <section>
@@ -318,54 +270,6 @@ const IndexPage = ({ data }) => (
     </main>
   </>
 )
-
-/*
-      <footer
-        css={css`
-          background-color: #011627;
-          color: white;
-          height: 100%;
-          text-align: right;
-          padding: 1px 50px;
-        `}
-      >
-        <h5>
-          Header photo credit:{' '}
-          <a
-            href="https://www.jacksonweaver.ca/"
-            css={css`
-              color: white;
-            `}
-          >
-            <b>Jackson Weaver</b>
-          </a>
-        </h5>
-      </footer>
-*/
-
-/*
-      <footer
-        css={css`
-          background-color: #011627;
-          color: white;
-          height: 100%;
-          text-align: right;
-          padding: 1px 50px;
-        `}
-      >
-        <h5>
-          Header photo credit:{' '}
-          <a
-            href="https://www.jacksonweaver.ca/"
-            css={css`
-              color: white;
-            `}
-          >
-            <b>Jackson Weaver</b>
-          </a>
-        </h5>
-      </footer>
-*/
 
 export const pageQuery = graphql`
   query {
@@ -405,7 +309,47 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    projects: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/_projects/" } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            image {
+              childImageSharp {
+                fixed(width: 290, height: 270) {
+                  ...GatsbyImageSharpFixed_withWebp_tracedSVG
+                }
+              }
+            }
+            link
+            socials {
+              icon
+              label
+            }
+            title
+          }
+          html
+        }
+      }
+    }
   }
 `
+/*
+allMarkdownRemark(filter: { frontmatter: { path: { eq: "_projects" } } }) {
+  edges {
+    node {
+      html
+      frontmatter {
+        title
+        link
+        image
+        socials
+      }
+    }
+  }
+}
+*/
 
 export default IndexPage

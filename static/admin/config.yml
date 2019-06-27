@@ -10,11 +10,16 @@ collections:
   - name: 'projects'
     label: 'Project'
     folder: '_projects'
+    create: true
+    identifier_field: label
+    editor:
+      preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Content', name: 'content', widget: 'markdown' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Link', name: 'link', widget: 'string' }
       - { label: 'Image', name: 'image', widget: 'image' }
+      - { label: 'Image Description', name: 'imageAlt', widget: 'string' }
       - label: 'Socials'
         name: 'socials'
         widget: 'list'

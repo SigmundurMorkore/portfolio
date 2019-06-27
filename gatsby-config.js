@@ -7,13 +7,40 @@ module.exports = {
     secondaryColor: `#FFFFFF`,
   },
   plugins: [
-    'gatsby-plugin-typescript',
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/static/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `projects`,
+        path: `${__dirname}/_projects`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          // Gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: 'gatsby-remark-relative-images',
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+        ],
       },
     },
     `gatsby-transformer-sharp`,
