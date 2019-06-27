@@ -235,13 +235,7 @@ const IndexPage = ({ data }) => (
               title={project.node.frontmatter.title}
               link={project.node.frontmatter.link}
               content={project.node.html}
-              image={
-                <Img
-                  alt="Screenshot of the hvar.fo page"
-                  fixed={data.hvarImg.childImageSharp.fixed}
-                  objectFit="cover"
-                />
-              }
+              image={project.node.image}
               socials={project.node.frontmatter.socials}
             />
           ))}
