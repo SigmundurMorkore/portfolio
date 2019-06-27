@@ -1,7 +1,7 @@
 ---
 title: Hvar.fo
 link: 'https://hvar.fo'
-image: /images/uploads/ferdaaetlan.png
+image: /images/uploads/hvar.png
 imageAlt: Screenshot of the Hvar.fo website
 socials:
   - icon: fal fa-newspaper
