@@ -323,7 +323,6 @@ export const pageQuery = graphql`
                 }
               }
             }
-            imageAlt
             link
             socials {
               icon
