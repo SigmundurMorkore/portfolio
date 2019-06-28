@@ -8,6 +8,8 @@ import header from '../../static/images/header.jpg'
 
 const Header = styled.header`
   height: 40vw;
+  max-height: 750px;
+  min-height: 250px;
   margin: 0 auto;
 
   /* Background Image */
@@ -30,7 +32,9 @@ const SectionTitle = styled.h2`
   margin-bottom: 50px;
   position: relative;
   z-index: 1;
-  overflow: hidden
+  @media (max-width: 400px) {
+    font-size: 8vw;
+  }
 
   &:before {
     content: '';
@@ -100,8 +104,17 @@ const IndexPage = ({ data }) => (
             display: inline-block
             font-family: Brawler;
             font-size: 64px;
-            padding-top: 15%;
-            margin-right: 50px;
+
+            /* Center Text */
+            position: relative;
+            float: left;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @media(max-width: 1200px) {
+              font-size: 5.3vw;
+            }
           `}
       >
         Hello, I am{' '}
@@ -116,9 +129,13 @@ const IndexPage = ({ data }) => (
           css={`
             margin: 0;
             padding-top: 10px;
-            margin-right: -50px;
+            margin-right: -3vw;
             font-size: 36px;
             text-align: right;
+
+            @media (max-width: 1200px) {
+              font-size: 3vw;
+            }
           `}
         >
           I make and design great looking websites.
@@ -138,6 +155,13 @@ const IndexPage = ({ data }) => (
             '. about about aside'
             '. content content aside';
           margin: 0 10vw;
+
+          @media (max-width: 700px) {
+            grid-template:
+              'about'
+              'content'
+              'aside';
+          }
         `}
       >
         <h2
@@ -148,7 +172,7 @@ const IndexPage = ({ data }) => (
             align-items: flex-end;
           `}
         >
-          About me
+          <b>About me</b>
         </h2>
         <h3
           css={css`
@@ -167,6 +191,8 @@ const IndexPage = ({ data }) => (
         </h3>
         <aside
           css={css`
+            position: sticky;
+            top: 100px;
             grid-area: aside;
             width: 250px;
             height: 300px;

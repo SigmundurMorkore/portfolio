@@ -7,6 +7,7 @@ const Project = ({ title, content, link, image, socials }) => (
   <div
     css={css`
       display: grid;
+      max-width: 80vw;
       grid-template:
         'title'
         'image'
@@ -14,6 +15,7 @@ const Project = ({ title, content, link, image, socials }) => (
         'socials';
       box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
       padding: 20px;
+      justify-self: center;
       justify-items: center;
 
       transition: 0.3s ease-in-out;
@@ -80,6 +82,7 @@ const Project = ({ title, content, link, image, socials }) => (
         fixed={image.childImageSharp.fixed}
         css={css`
           box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+          max-width: 80vw;
         `}
       />
     </a>
