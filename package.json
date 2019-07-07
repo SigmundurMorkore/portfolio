@@ -6,10 +6,12 @@
   "author": "Sigmundur Mørkøre <sm@sigmundur.dev>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "dev-to-git": "^1.1.0",
     "gatsby": "^2.8.2",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
     "gatsby-plugin-netlify-cms": "^4.1.0",
     "gatsby-plugin-offline": "^2.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -36,18 +38,19 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build && yarn run dev-to-git",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "dev-to-git": "dev-to-git"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/SigmundurMorkore/portfolio.git"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/SigmundurMorkore/portfolio/issues"
   }
 }
