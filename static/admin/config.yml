@@ -44,7 +44,7 @@ collections:
           name: 'tags',
           widget: 'list',
           default: ['javascript'],
-          requird: false,
+          required: false,
         }
       - {
           label: 'Dev.to Published',
