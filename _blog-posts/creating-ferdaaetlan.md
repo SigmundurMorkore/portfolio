@@ -1,10 +1,10 @@
 ---
 title: Creating Ferdaætlan.fo
 description: Going over how I created Ferdaætlan.fo
-cover-image: ../public/images/ferdaaetlan.png
+cover-image: /images/uploads/ferdaaetlan.png
 tags: 'javascript, react, gatsby'
 published: false
 ---
 Testing dev-to-git
 
-![alt text](../public/images/ferdaaetlan.png 'Title image')
+![alt text](/images/uploads/ferdaaetlan.png)
