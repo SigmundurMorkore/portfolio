@@ -39,11 +39,17 @@ collections:
           widget: 'image',
           required: false,
         }
-      - { label: 'Tags', name: 'tags', widget: 'string', hint: 'Separate tags with a comma' required: false }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'string',
+          hint: 'Separate tags with a comma',
+          required: false,
+        }
       - {
           label: 'Dev.to Published',
           name: 'published',
           widget: 'boolean',
-          hint: 'Set to true to make post public on dev.to'
+          hint: 'Set to true to make post public on dev.to',
           default: false,
         }
