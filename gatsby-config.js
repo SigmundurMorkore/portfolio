@@ -22,6 +22,8 @@ module.exports = {
         path: `${__dirname}/_projects`,
       },
     },
+    // Including in your Gatsby plugins will transform any paths in your frontmatter
+    `gatsby-plugin-netlify-cms-paths`,
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -40,6 +42,7 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          `gatsby-plugin-netlify-cms-paths`,
         ],
       },
     },
