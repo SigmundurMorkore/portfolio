@@ -26,15 +26,26 @@ collections:
           - { label: 'Label', name: 'label', widget: 'string' }
           - { label: 'Font Awesome Icon', name: 'icon', widget: 'string' }
   - name: 'blog-posts'
-  - label: 'Blog Post'
-  - folder: '_blog-posts'
-  - create: true
-  - fields:
+    label: 'Blog Post'
+    folder: '_blog-posts'
+    create: true
+    fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Cover Image', name: 'cover-image', widget: 'image' }
-      - { label: 'Tags', name: 'tags', widget: 'list', default: ['javascript'] }
+      - {
+          label: 'Cover Image',
+          name: 'cover-image',
+          widget: 'image',
+          required: false,
+        }
+      - {
+          label: 'Tags',
+          name: 'tags',
+          widget: 'list',
+          default: ['javascript'],
+          requird: false,
+        }
       - {
           label: 'Dev.to Published',
           name: 'published',
