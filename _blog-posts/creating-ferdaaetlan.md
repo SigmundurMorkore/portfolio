@@ -1,9 +1,6 @@
 ---
 title: How I Created a Bus Route Planner
-description: >-
-  I developed Ferðaætlan while studying in Tekniski Skúlanum í Klaksvík. It
-  allows the user to see which SSL bus routes they need to take, to get to their
-  destination. The website is developed using React and Firebase.
+description: I developed Ferðaætlan while studying in Tekniski Skúlanum í Klaksvík.
 cover-image: /images/uploads/ferdaaetlan.png
 tags: 'javascript, react, firebase'
 published: false
