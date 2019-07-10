@@ -57,6 +57,10 @@ function deleteFiles(parsedFilenames) {
   })
 }
 
+console.log('Start reading blog posts...')
 readFiles()
+console.log('Finished reading blog posts!')
 require('dev-to-git')
+console.log('Start deleting parsed blog-posts...')
 deleteFiles(parsedFilenames)
+console.log('Finished deleting parsed blog-posts!')
