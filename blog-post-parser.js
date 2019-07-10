@@ -13,7 +13,7 @@ function readFiles() {
   fileNames = fs.readdirSync(BLOG_POSTS_PATH)
   fileNames.forEach(filename => {
     article = fs.readFileSync(BLOG_POSTS_PATH + filename, 'utf-8')
-
+    parsedArticle = article
     let searchImageResult,
       localImagesToReplace = []
 
@@ -36,7 +36,7 @@ function readFiles() {
           })`,
         })
       }
-      let parsedArticle = localImagesToReplace.reduce(
+      parsedArticle = localImagesToReplace.reduce(
         (articleTemp, imageToReplace) =>
           articleTemp.replace(
             imageToReplace.localImage,
@@ -44,10 +44,10 @@ function readFiles() {
           ),
         article,
       )
-      parsedFilename = 'static/' + filename
-      parsedFilenames.push(parsedFilename)
-      fs.writeFileSync(parsedFilename, parsedArticle)
     }
+    parsedFilename = 'static/' + filename
+    parsedFilenames.push(parsedFilename)
+    fs.writeFileSync(parsedFilename, parsedArticle)
   })
 }
 
@@ -60,7 +60,11 @@ function deleteFiles(parsedFilenames) {
 console.log('Start reading blog posts...')
 readFiles()
 console.log('Finished reading blog posts!')
+
+console.log('Start running dev-to-git script...')
 require('dev-to-git')
+console.log('Finished running dev-to-git script')
+
 console.log('Start deleting parsed blog-posts...')
 deleteFiles(parsedFilenames)
 console.log('Finished deleting parsed blog-posts!')
