@@ -3390,11 +3390,12 @@ detect-port@^1.2.1:
     address "^1.0.1"
     debug "^2.6.0"
 
-dev-to-git@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/dev-to-git/-/dev-to-git-1.1.0.tgz#d093aad2920b50b49941fc98f957cacfb6425861"
+dev-to-git@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/dev-to-git/-/dev-to-git-1.2.0.tgz#acf62e96d7464cfc386e2d6491a3aee13c3f54a9"
   dependencies:
     dotenv "8.0.0"
+    front-matter "3.0.2"
     got "9.6.0"
     minimist "1.2.0"
 
@@ -4522,6 +4523,12 @@ from2@^2.1.0, from2@^2.1.1:
   dependencies:
     inherits "^2.0.1"
     readable-stream "^2.0.0"
+
+front-matter@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/front-matter/-/front-matter-3.0.2.tgz#2401cd05fcf22bd0de48a104ffb4efb1ff5c8465"
+  dependencies:
+    js-yaml "^3.13.1"
 
 fs-constants@^1.0.0:
   version "1.0.0"

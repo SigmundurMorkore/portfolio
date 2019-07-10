@@ -6,7 +6,7 @@
   "author": "Sigmundur Mørkøre <sm@sigmundur.dev>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
-    "dev-to-git": "^1.1.0",
+    "dev-to-git": "^1.2.0",
     "gatsby": "^2.8.2",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
@@ -45,7 +45,7 @@
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "dev-to-git": "dev-to-git"
+    "dev-to-git": "node blog-post-parser.js"
   },
   "repository": {
     "type": "git",
